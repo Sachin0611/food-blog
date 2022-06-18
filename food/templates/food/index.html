@@ -1,0 +1,40 @@
+{%extends 'food/base.html'%}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        {% block body %}
+        {%for item in item_list%}
+               <div class="row">
+                   <div class="col-md-3 offset-md-2">
+                       <img class="card" height = "150px" src = {{item.item_image}}>   
+                </div>
+                <div class="col-md-4">
+                     <h3>  {{item.item_name}} </h3>
+                     <h3>  {{item.item_desc}} </h3>
+                     <h3>  ${{item.item_price}} </h3>
+                     <h3>{{item.user_name}}</h3>
+                </div>
+                <div class="col-md-2">
+                    <a href="/food/{{item.id}}" class="btn btn-success">Details</a>
+                </div>
+               </div>
+         
+
+        {%endfor%}
+        {% endblock %}  
+       
+        <script src="" async defer></script>
+    </body>
+</html>

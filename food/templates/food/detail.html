@@ -1,0 +1,35 @@
+{%extends 'food/base.html' %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {%block body%}
+        <div class="container">
+            <div class="row">
+               <div class = "col-md-6">
+                    <img src="{{item.item_image}}" class="card" height=300px/>
+               </div>
+               <div class = "col-md-6">
+                <h1>{{object.item_name}}</h1>
+                <h2>{{object.item_desc}}</h2>
+                <h3>{{object.item_price}}</h3>
+                <h3>{{object.user_name}}</h3>
+                <a href="{%url 'food:delete_item' item.id%}">Delete Item</a>
+            </div> 
+            </div>
+        </div>
+        {%endblock%}
+        <script src="" async defer></script>
+    </body>
+</html>
